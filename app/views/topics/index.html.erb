@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Topics</h1>
+<h1>你覺得敏迪...</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Title</th>
+      <th>題目</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,9 +15,9 @@
       <tr>
         <td><%= link_to topic.title, topic %></td>
         <td><%= pluralize(topic.votes.count, "vote") %></td>
-        <td><%= button_to '+1', upvote_topic_path(topic), method: :post %></td>
-        <td><%= button_to '-1', deletevote_topic_path(topic), method: :post %></td>
-        <td><%= link_to 'Delete', topic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= button_to '我同意', upvote_topic_path(topic), method: :post %></td>
+        <td><%= button_to '我不同意', deletevote_topic_path(topic), method: :post %></td>
+        <td><%= link_to 'Delete', topic, method: :delete, data: { confirm: '幹什麼刪我的選項' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -25,4 +25,4 @@
 
 <br>
 
-<%= link_to 'New Topic', new_topic_path %>
+<%= link_to '要不然你自己加', new_topic_path %>
