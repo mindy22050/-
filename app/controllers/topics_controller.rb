@@ -68,6 +68,15 @@ class TopicsController < ApplicationController
     redirect_to(topics_path)
   end
 
+#試寫-1按鈕
+  def deletevote
+    @topic = Topic.find(params[:id])
+    @topic.votes.last.delete
+    redirect_to(topics_path)
+  end
+#
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_topic
